@@ -109,7 +109,7 @@
           <section id="colorlib-hero" class="js-fullheight" data-section="home">
             <div class="flexslider js-fullheight">
               <ul class="slides">
-                <li style="background-image: url(images/lol.jpg)">
+                <li style="background-image: url(images/scale.jpg)">
                   <div class="overlay"></div>
                   <div class="container-fluid">
                     <div class="row">
@@ -239,7 +239,7 @@
                     </span>
                     <div class="desc">
                       <h3>Problem-Solving</h3>
-                      <p>**Placeholder**</p>
+                      <p>Quick to implement creative solutions to complex issues </p>
                     </div>
                   </div>
                 </div>
@@ -250,7 +250,7 @@
                     </span>
                     <div class="desc">
                       <h3>Flexibile and Adaptive</h3>
-                      <p>**Placeholder**</p>
+                      <p>Restructured old processes and workflows</p>
                     </div>
                   </div>
                 </div>
@@ -272,7 +272,7 @@
                     </span>
                     <div class="desc">
                       <h3>Organizing and Planning</h3>
-                      <p>**Placeholder**</p>
+                      <p>Worked with lawyers and clients to organize and track nonprofit events</p>
                     </div>
                   </div>
                 </div>
@@ -283,7 +283,7 @@
                     </span>
                     <div class="desc">
                       <h3>Leadership and Interpersonal Skills</h3>
-                      <p>Mentoring colleagues on standard practices</p>
+                      <p>Mentored colleagues on standard practices</p>
                     </div>
                   </div>
                 </div>
@@ -763,7 +763,7 @@ database
                       <form action="" class="form-contact">
                         <div class="form-group">
                           <input
-							id="senderName"
+							id="name"
                             type="text"
                             class="form-control"
                             placeholder="Name"
@@ -771,7 +771,7 @@ database
                         </div>
                         <div class="form-group">
                           <input
-							id="senderEmail"
+							id="email"
                             type="text"
                             class="form-control"
                             placeholder="Email"
@@ -779,7 +779,7 @@ database
                         </div>
                         <div class="form-group">
                           <input
-						  id="senderSubject"
+						  id="subject"
                             type="text"
                             class="form-control"
                             placeholder="Subject"
@@ -788,7 +788,7 @@ database
                         <div class="form-group">
                           <textarea
                             name=""
-                            id="senderMessage"
+                            id="message"
                             cols="30"
                             rows="7"
                             class="form-control"
@@ -797,6 +797,7 @@ database
                         </div>
                         <div class="form-group">
                           <input
+							onclick="sendMail()"
                             type="submit"
                             class="btn btn-primary btn-send-message"
                             value="Send Message"
@@ -834,41 +835,15 @@ database
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
 
-
 	<!--Email Script-->
-	<script>
-		const name =  document.getElementById('senderName');
-		const email = document.getElementById('senderEmail');
-		const subject = document.getElementById('senderSubject');
-		const message =  document.getElementById('senderMessage');
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>	
 
-
-		const submit = document.getElementsByClassName('form-contact')[0];
-
-		submit.addEventListener('submit', (e) =>{
-			e.preventDefault();
-			console.log(name.value);
-			console.log(email.value);
-			console.log(subject.value);
-			console.log(message.value);
-
-
-
-
-			Email.send({
-				SecureToken : "f1b20584-d95b-4770-aeea-8e7a8baedf95",
-				To : 'Thooraya@gmail.com',
-				From : email.value,
-				Subject : subject.value,
-				Body : message.value
-			}).then(
-			message => alert(message)
-			);
-		})
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script src="/js/email.js"></script>
+	<script type="text/javascript">
+		(function(){
+			emailjs.init("user_6QJaunDGy0xqYrVJn5n8d");
+		})();
 	</script>
-
-
-
-	
   </body>
 </html>
