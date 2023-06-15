@@ -573,8 +573,10 @@ body.offcanvas {
     margin-left: 10px; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+  border-style: ridge;
+  background: white;
+
   position: relative;
-  background: #f2f3f7;
   padding: 1.5em;
   margin-left: 60px;
   -webkit-background-clip: padding-box;
@@ -614,6 +616,7 @@ body.offcanvas {
   font-size: 16px; }
 
 .services {
+  background-color: white;
   margin-bottom: 30px;
   padding: 1.5em;
   -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
@@ -1427,3 +1430,10 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
+
+#contact-row{
+border-style: ridge;
+background: white;
+padding: 25px;
+} 
+  
