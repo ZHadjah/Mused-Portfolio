@@ -50,6 +50,9 @@
 
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
       <script src="js/respond.min.js"></script>
@@ -239,7 +242,7 @@
                       <i class="icon-bulb"></i>
                     </span>
                     <div class="desc">
-                      <h3>**Placeholder**</h3>
+                      <h3>Problem-Solving</h3>
                       <p>**Placeholder**</p>
                     </div>
                   </div>
@@ -250,7 +253,7 @@
                       <i class="icon-data"></i>
                     </span>
                     <div class="desc">
-                      <h3>**Placeholder**</h3>
+                      <h3>Flexibile and Adaptive</h3>
                       <p>**Placeholder**</p>
                     </div>
                   </div>
@@ -261,8 +264,8 @@
                       <i class="icon-phone3"></i>
                     </span>
                     <div class="desc">
-                      <h3>**Placeholder**</h3>
-                      <p>**Placeholder**</p>
+                      <h3>Technologist</h3>
+                      <p>Proficient with Microsoft Excel and databases</p>
                     </div>
                   </div>
                 </div>
@@ -272,7 +275,7 @@
                       <i class="icon-layers2"></i>
                     </span>
                     <div class="desc">
-                      <h3>**Placeholder**</h3>
+                      <h3>Organizing and Planning</h3>
                       <p>**Placeholder**</p>
                     </div>
                   </div>
@@ -283,7 +286,7 @@
                       <i class="icon-data"></i>
                     </span>
                     <div class="desc">
-                      <h3>**Placeholder**</h3>
+                      <h3>Leadership and Interpersonal Skills</h3>
                       <p>**Placeholder**</p>
                     </div>
                   </div>
@@ -294,7 +297,7 @@
                       <i class="icon-phone3"></i>
                     </span>
                     <div class="desc">
-                      <h3>**Placeholder**</h3>
+                      <h3>Administrative Skills</h3>
                       <p>**Placeholder**</p>
                     </div>
                   </div>
@@ -762,9 +765,10 @@ database
                       class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box"
                       data-animate-effect="fadeInRight"
                     >
-                      <form action="">
+                      <form action="" class="form-contact">
                         <div class="form-group">
                           <input
+							id="senderName"
                             type="text"
                             class="form-control"
                             placeholder="Name"
@@ -772,6 +776,7 @@ database
                         </div>
                         <div class="form-group">
                           <input
+							id="senderEmail"
                             type="text"
                             class="form-control"
                             placeholder="Email"
@@ -779,6 +784,7 @@ database
                         </div>
                         <div class="form-group">
                           <input
+						  id="senderSubject"
                             type="text"
                             class="form-control"
                             placeholder="Subject"
@@ -787,7 +793,7 @@ database
                         <div class="form-group">
                           <textarea
                             name=""
-                            id="message"
+                            id="senderMessage"
                             cols="30"
                             rows="7"
                             class="form-control"
@@ -832,5 +838,42 @@ database
 
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
+
+
+	<!--Email Script-->
+	<script>
+		const name =  document.getElementById('senderName');
+		const email = document.getElementById('senderEmail');
+		const subject = document.getElementById('senderSubject');
+		const message =  document.getElementById('senderMessage');
+
+
+		const submit = document.getElementsByClassName('form-contact')[0];
+
+		submit.addEventListener('submit', (e) =>{
+			e.preventDefault();
+			console.log(name.value);
+			console.log(email.value);
+			console.log(subject.value);
+			console.log(message.value);
+
+
+
+
+			Email.send({
+				SecureToken : "f1b20584-d95b-4770-aeea-8e7a8baedf95",
+				To : 'Thooraya@gmail.com',
+				From : email.value,
+				Subject : subject.value,
+				Body : message.value
+			}).then(
+			message => alert(message)
+			);
+		})
+	</script>
+
+
+
+	
   </body>
 </html>
