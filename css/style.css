@@ -19,7 +19,12 @@ body {
   color: rgba(0, 0, 0, 0.7); }
   @media screen and (max-width: 992px) {
     body {
-      font-size: 16px; } }
+      font-size: 16px; 
+    }
+    #colorlib-main #colorlib-hero {
+      display: none;
+    }    
+  }
 
 a {
   color: #be29ec;
@@ -1436,4 +1441,3 @@ border-style: ridge;
 background: white;
 padding: 25px;
 } 
-  
